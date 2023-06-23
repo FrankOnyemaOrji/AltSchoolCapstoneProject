@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block section %}
+<div class="container">
+    <div class="d-sm-auto">
+        <h1>Please register to be<span class="text-warning"> able to shorten your url</span> </h1>
+        <h3>Make any url shorter</h3>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Register Here</h1>
+    <form class="col g-3" method="POST">
+        <div class="col-md-6">
+            <label class="visually-hidden" for="username">Username</label>
+            <div class="input-group">
+                <div class="input-group-text">@</div>
+                <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="col-md-6">
+            <label for="password1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password1" name="password1" required>
+        </div>
+        <div class="col-md-6">
+            <label for="password2" class="form-label"> Confirm Password</label>
+            <input type="password" class="form-control" id="password2" name="password2" required>
+        </div>
+        <div class="col-md-12 mt-2">
+            <button type="submit" class="btn btn-dark">Register</button>
+        </div>
+    </form>
+    <div class="col-md-12 mt-2">
+        <h5>Already have an Account?</h5>
+        <a href="/login" class="btn btn-dark">Login</a>
+    </div>
+</div>
+{% endblock %}

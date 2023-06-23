@@ -1,0 +1,34 @@
+{% extends 'layout.html' %} {% block section %}
+    <div class="container">
+        <div class="d-sm-auto">
+            <h3>Welcome&nbsp;<span class="text-warning">{{ current_user.username }}</span></h3>
+            <!-- <h1>Welcome to <span class="text-warning">{% block owner%}{% endblock %} Blog</span> </h1> -->
+        </div>
+    </div>
+{% endblock %}
+<br>
+{% block content %}
+<div class="container">
+    <h2>List of URLs</h2>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Original URL</th>
+                <th>Short URL</th>
+                <th>Created</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for link in links %}
+                <tr>
+                    <td>{{ link.original_url }}</td>
+                    <td>{{ url_for('short.redirect_to_url', short_url=link.short_url, _external=True) }}</td>
+                    <td>{{ link.date_created }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
