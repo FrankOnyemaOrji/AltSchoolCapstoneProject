@@ -18,9 +18,13 @@ making them more manageable and easier to share.
 **Installation**
 Clone the repository
 `git clone https://github.com/FrankOnyemaOrji/AltSchoolCapstoneProject.git`
+
 `cd AltSchoolCapstoneProject/url-shorten-clone`
+
 `pip install -r requirements.txt`
+
 `flask run or python app.py to run the app`
+
 
 **Usage**
 Once the application is up and running, you can use it as follows:
