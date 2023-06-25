@@ -17,6 +17,7 @@ making them more manageable and easier to share.
 
 **Installation**
 Clone the repository
+
 `git clone https://github.com/FrankOnyemaOrji/AltSchoolCapstoneProject.git`
 
 `cd AltSchoolCapstoneProject/url-shorten-clone`
