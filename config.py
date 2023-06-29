@@ -1,16 +1,22 @@
-from flask import Flask, app
+from flask import Flask
+
 from flask_sqlalchemy import SQLAlchemy
+# import os
 from os import path
 from flask_login import LoginManager
 
 db = SQLAlchemy()
 DB_NAME = "scissor.db"
+DB_NAMEB = "postgres://scissor_url_user:6SY4OzRAyxYlk6ero2xeVUckBYybMC4p@dpg-ciejshtgkuvlk1gf70a0-a.oregon-postgres.render.com/scissor_url"
 
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'fd8fefa4bea22a413d1bd730ef391b0d'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://scissor_url_user:6SY4OzRAyxYlk6ero2xeVUckBYybMC4p@dpg-ciejshtgkuvlk1gf70a0-a.oregon-postgres.render.com/scissor_url'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    #f'sqlite:///{DB_NAME}'
+    # postgres://scissor_url_user:6SY4OzRAyxYlk6ero2xeVUckBYybMC4p@dpg-ciejshtgkuvlk1gf70a0-a.oregon-postgres.render.com/scissor_url
     db.init_app(app)
 
     from shorts import short
